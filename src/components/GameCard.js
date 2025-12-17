@@ -10,7 +10,8 @@ export function renderGameCard(game) {
 
   let imgUrl = game.image;
   if (imgUrl.startsWith('/cache')) {
-    imgUrl = '/public' + imgUrl;
+    // Relative path to public folder
+    imgUrl = './public' + imgUrl;
   } else if (imgUrl.startsWith('/')) {
     imgUrl = '.' + imgUrl;
   }
