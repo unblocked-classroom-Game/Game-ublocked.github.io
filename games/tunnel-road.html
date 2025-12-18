@@ -65,10 +65,110 @@
       </header>
 
       <main id="main-content" class="main-content">
-        <!-- Content will be injected here -->
+  <section class="player-layout">
+      <div class="player-main">
+        <div class="player-header">
+          <a href="../index.html" class="btn-back">
+            <span class="icon">arrow_back</span> Back
+          </a>
+          <h2>Tunnel Road</h2>
+        </div>
+        
+        <div class="game-wrapper">
+          <div class="iframe-container">
+             <iframe 
+               src="https://html5.gamedistribution.com/14e87fab0cbf44b6b3e57ddb77af5941/" 
+               id="game-frame" 
+               frameborder="0" 
+               scrolling="no" 
+               allowfullscreen 
+               referrerpolicy="no-referrer" 
+               style="width: 100%; height: 100%; background: white;"
+               sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-pointer-lock allow-top-navigation-by-user-activation"
+               allow="autoplay; fullscreen; monetization; clipboard-write; web-share; accelerometer; magnetometer; gyroscope; display-capture">
+            </iframe>
+          </div>
+          <div class="game-controls">
+            <button id="btn-fullscreen" class="control-btn" onclick="const iframe = document.getElementById('game-frame'); if(iframe.requestFullscreen) iframe.requestFullscreen();">
+              <span class="icon">fullscreen</span> Fullscreen
+            </button>
+             <div class="rating">
+                <span class="icon">❤️</span> 95%
+             </div>
+          </div>
+        </div>
 
+        <div class="game-info">
+          <h3>About Tunnel Road</h3>
+          <p>Experience the thrill of speed in Tunnel Road. Navigate through endless futuristic tunnels, avoid obstacles, and set new high scores in this fast-paced arcade game.</p>
+          
+          <div class="instructions">
+             <h3>How to Play</h3>
+             <ul>
+               <li>Click "Play" to start.</li>
+               <li>Use Mouse or Keyboard to control.</li>
+               <li>Complete objectives and earn high scores!</li>
+             </ul>
+          </div>
+        </div>
+      </div>
 
-      </main>
+      <aside class="player-sidebar">
+        <h3>You May Also Like</h3>
+        <div class="related-games-list">
+          
+            <a href="../games/hidden-easter-egg-hunt.html" class="related-card">
+              <img src="../public/cache/data/image/game/hidden-easter-egg-hunt/hidden-easter-egg-hunt.jpg" alt="Hidden Easter Egg Hunt" loading="lazy" />
+              <div class="info">
+                <h4>Hidden Easter Egg Hunt</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/two-archers-bow-duel.html" class="related-card">
+              <img src="../public/cache/data/image/game/two-archers-bow-duel/two-archers-bow-duel.jpg" alt="Two Archers: Bow Duel" loading="lazy" />
+              <div class="info">
+                <h4>Two Archers: Bow Duel</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/zen-master-3-tiles.html" class="related-card">
+              <img src="../public/cache/data/image/game/zen-master-3-tiles/zen-master-3-tiles.jpg" alt="Zen Master - 3 tiles" loading="lazy" />
+              <div class="info">
+                <h4>Zen Master - 3 tiles</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/merge-flowers.html" class="related-card">
+              <img src="../public/cache/data/image/game/merge-flowers/merge-flowers.jpg" alt="Merge Flowers" loading="lazy" />
+              <div class="info">
+                <h4>Merge Flowers</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/2048-merge-circle.html" class="related-card">
+              <img src="../public/cache/data/image/game/2048-merge-circle/2048-merge-circle.jpg" alt="2048 Merge Circle" loading="lazy" />
+              <div class="info">
+                <h4>2048 Merge Circle</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/solitaire-mahjong.html" class="related-card">
+              <img src="../public/cache/data/image/game/solitaire-mahjong/solitaire-mahjong.jpg" alt="Solitaire Mahjong" loading="lazy" />
+              <div class="info">
+                <h4>Solitaire Mahjong</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+        </div>
+      </aside>
+    </section>
+</main>
 
       <footer class="site-footer"
         style="background: var(--surface); border-top: 1px solid var(--glass-border); padding: 4rem 2rem 2rem; margin-top: 2rem;">

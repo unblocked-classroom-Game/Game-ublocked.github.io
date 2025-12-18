@@ -86,10 +86,21 @@ def generate_grid_page(games_list, page_title, output_filename, active_nav='', s
       </section>
     '''
 
-    page_content = template.replace(
-        '<main id="main-content" class="main-content">\n        <!-- Content will be injected here -->\n      </main>',
-        f'<main id="main-content" class="main-content">{page_html}</main>'
-    )
+    # Replacement string matches current template.html structure with extra newlines
+    target_string = '<main id="main-content" class="main-content">\n        <!-- Content will be injected here -->\n\n\n      </main>'
+    if target_string not in template:
+        # Fallback if whitespace differs slightly - try the original single version just in case, or a regex
+        # But for now let's try the likely one. If this fails, we might need a smarter replacement.
+        # Let's actually use a regex to be safe suitable for this simple case
+        page_content = re.sub(
+            r'<main id="main-content" class="main-content">.*?</main>', 
+            f'<main id="main-content" class="main-content">{page_html}</main>', 
+            template, 
+            flags=re.DOTALL
+        )
+    else:
+        page_content = template.replace(target_string, f'<main id="main-content" class="main-content">{page_html}</main>')
+
     
     # Set Active Nav State
     # Note: This is simple string replacement, might be brittle if classes change
@@ -191,10 +202,15 @@ def generate_content_page(title, content_html, output_filename, seo_title='', se
       </section>
     '''
 
-    page_content = template.replace(
-        '<main id="main-content" class="main-content">\n        <!-- Content will be injected here -->\n      </main>',
-        f'<main id="main-content" class="main-content">{page_html}</main>'
+    # Replacement string matches current template.html structure with extra newlines
+    # Using regex for robustness as defined above
+    page_content = re.sub(
+        r'<main id="main-content" class="main-content">.*?</main>', 
+        f'<main id="main-content" class="main-content">{page_html}</main>', 
+        template, 
+        flags=re.DOTALL
     )
+
     
     # SEO
     page_content = page_content.replace('%TITLE%', seo_title)
@@ -370,10 +386,13 @@ for game in games:
     </section>
 '''
 
-    page_content = template.replace(
-        '<main id="main-content" class="main-content">\n        <!-- Content will be injected here -->\n      </main>',
-        f'<main id="main-content" class="main-content">{player_html}</main>'
+    page_content = re.sub(
+        r'<main id="main-content" class="main-content">.*?</main>', 
+        f'<main id="main-content" class="main-content">{player_html}</main>', 
+        template, 
+        flags=re.DOTALL
     )
+
     
     # Game SEO Data
     g_title = f"{name} - Play Online for Free"

@@ -65,10 +65,110 @@
       </header>
 
       <main id="main-content" class="main-content">
-        <!-- Content will be injected here -->
+  <section class="player-layout">
+      <div class="player-main">
+        <div class="player-header">
+          <a href="../index.html" class="btn-back">
+            <span class="icon">arrow_back</span> Back
+          </a>
+          <h2>Weapons and Ragdolls</h2>
+        </div>
+        
+        <div class="game-wrapper">
+          <div class="iframe-container">
+             <iframe 
+               src="https://html5.gamedistribution.com/8d7c235d86504e9786f81e2a76c59872/" 
+               id="game-frame" 
+               frameborder="0" 
+               scrolling="no" 
+               allowfullscreen 
+               referrerpolicy="no-referrer" 
+               style="width: 100%; height: 100%; background: white;"
+               sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-pointer-lock allow-top-navigation-by-user-activation"
+               allow="autoplay; fullscreen; monetization; clipboard-write; web-share; accelerometer; magnetometer; gyroscope; display-capture">
+            </iframe>
+          </div>
+          <div class="game-controls">
+            <button id="btn-fullscreen" class="control-btn" onclick="const iframe = document.getElementById('game-frame'); if(iframe.requestFullscreen) iframe.requestFullscreen();">
+              <span class="icon">fullscreen</span> Fullscreen
+            </button>
+             <div class="rating">
+                <span class="icon">❤️</span> 95%
+             </div>
+          </div>
+        </div>
 
+        <div class="game-info">
+          <h3>About Weapons and Ragdolls</h3>
+          <p>Unleash chaos in Weapons and Ragdolls. Experiment with various weapons on ragdoll physics characters for hilarious and action-packed moments.</p>
+          
+          <div class="instructions">
+             <h3>How to Play</h3>
+             <ul>
+               <li>Click "Play" to start.</li>
+               <li>Use Mouse or Keyboard to control.</li>
+               <li>Complete objectives and earn high scores!</li>
+             </ul>
+          </div>
+        </div>
+      </div>
 
-      </main>
+      <aside class="player-sidebar">
+        <h3>You May Also Like</h3>
+        <div class="related-games-list">
+          
+            <a href="../games/merge-flowers.html" class="related-card">
+              <img src="../public/cache/data/image/game/merge-flowers/merge-flowers.jpg" alt="Merge Flowers" loading="lazy" />
+              <div class="info">
+                <h4>Merge Flowers</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/aqua-blitz-2.html" class="related-card">
+              <img src="../public/cache/data/image/game/aqua-blitz-2/aqua-blitz-2.jpeg" alt="Aqua Blitz 2" loading="lazy" />
+              <div class="info">
+                <h4>Aqua Blitz 2</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/cat-chaos-simulator.html" class="related-card">
+              <img src="../public/cache/data/image/game/cat-chaos-simulator/cat-chaos-simulator.jpg" alt="Cat Chaos Simulator" loading="lazy" />
+              <div class="info">
+                <h4>Cat Chaos Simulator</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/snow-rush-3d.html" class="related-card">
+              <img src="../public/cache/data/image/game/snow-rush-3d/snow-rush-3d.jpg" alt="Snow Rush 3D" loading="lazy" />
+              <div class="info">
+                <h4>Snow Rush 3D</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/draw-weapon-fight-party.html" class="related-card">
+              <img src="../public/cache/data/image/game/draw-weapon-fight-party/draw-weapon-fight-party.jpg" alt="Draw Weapon Fight Party" loading="lazy" />
+              <div class="info">
+                <h4>Draw Weapon Fight Party</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/robby-bomberman.html" class="related-card">
+              <img src="../public/cache/data/image/game/robby-bomberman/robby-bomberman.jpg" alt="Robby: Bomberman" loading="lazy" />
+              <div class="info">
+                <h4>Robby: Bomberman</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+        </div>
+      </aside>
+    </section>
+</main>
 
       <footer class="site-footer"
         style="background: var(--surface); border-top: 1px solid var(--glass-border); padding: 4rem 2rem 2rem; margin-top: 2rem;">

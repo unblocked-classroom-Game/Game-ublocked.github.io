@@ -65,10 +65,110 @@
       </header>
 
       <main id="main-content" class="main-content">
-        <!-- Content will be injected here -->
+  <section class="player-layout">
+      <div class="player-main">
+        <div class="player-header">
+          <a href="../index.html" class="btn-back">
+            <span class="icon">arrow_back</span> Back
+          </a>
+          <h2>Pizza Tycoon</h2>
+        </div>
+        
+        <div class="game-wrapper">
+          <div class="iframe-container">
+             <iframe 
+               src="https://html5.gamedistribution.com/d684c36172194e42aa6c7e99fde303ef/" 
+               id="game-frame" 
+               frameborder="0" 
+               scrolling="no" 
+               allowfullscreen 
+               referrerpolicy="no-referrer" 
+               style="width: 100%; height: 100%; background: white;"
+               sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-pointer-lock allow-top-navigation-by-user-activation"
+               allow="autoplay; fullscreen; monetization; clipboard-write; web-share; accelerometer; magnetometer; gyroscope; display-capture">
+            </iframe>
+          </div>
+          <div class="game-controls">
+            <button id="btn-fullscreen" class="control-btn" onclick="const iframe = document.getElementById('game-frame'); if(iframe.requestFullscreen) iframe.requestFullscreen();">
+              <span class="icon">fullscreen</span> Fullscreen
+            </button>
+             <div class="rating">
+                <span class="icon">❤️</span> 95%
+             </div>
+          </div>
+        </div>
 
+        <div class="game-info">
+          <h3>About Pizza Tycoon</h3>
+          <p>Build your pizza empire in Pizza Tycoon. Manage your pizzeria, serve hungry customers, and upgrade your shop to become the ultimate pizza chef.</p>
+          
+          <div class="instructions">
+             <h3>How to Play</h3>
+             <ul>
+               <li>Click "Play" to start.</li>
+               <li>Use Mouse or Keyboard to control.</li>
+               <li>Complete objectives and earn high scores!</li>
+             </ul>
+          </div>
+        </div>
+      </div>
 
-      </main>
+      <aside class="player-sidebar">
+        <h3>You May Also Like</h3>
+        <div class="related-games-list">
+          
+            <a href="../games/tunnel-road.html" class="related-card">
+              <img src="../public/cache/data/image/game/tunnel-road/tunnel-road.jpg" alt="Tunnel Road" loading="lazy" />
+              <div class="info">
+                <h4>Tunnel Road</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/doges-battle-royale.html" class="related-card">
+              <img src="../public/cache/data/image/game/doges-battle-royale/doges-battle-royale.jpg" alt="Doge's Battle Royale" loading="lazy" />
+              <div class="info">
+                <h4>Doge's Battle Royale</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/physics-balls.html" class="related-card">
+              <img src="../public/cache/data/image/game/physics-balls/physics-balls.jpg" alt="Physics Balls" loading="lazy" />
+              <div class="info">
+                <h4>Physics Balls</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/hidden-easter-egg-hunt.html" class="related-card">
+              <img src="../public/cache/data/image/game/hidden-easter-egg-hunt/hidden-easter-egg-hunt.jpg" alt="Hidden Easter Egg Hunt" loading="lazy" />
+              <div class="info">
+                <h4>Hidden Easter Egg Hunt</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/parkour-block-7.html" class="related-card">
+              <img src="../public/cache/data/image/game/parkour-block-7/parkour-block-7.jpg" alt="Parkour Block 7" loading="lazy" />
+              <div class="info">
+                <h4>Parkour Block 7</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/egg-adventure-2.html" class="related-card">
+              <img src="../public/cache/data/image/game/egg-adventure-2/egg-adventure-2.jpg" alt="Egg Adventure 2" loading="lazy" />
+              <div class="info">
+                <h4>Egg Adventure 2</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+        </div>
+      </aside>
+    </section>
+</main>
 
       <footer class="site-footer"
         style="background: var(--surface); border-top: 1px solid var(--glass-border); padding: 4rem 2rem 2rem; margin-top: 2rem;">

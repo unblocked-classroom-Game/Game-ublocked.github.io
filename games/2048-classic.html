@@ -65,10 +65,110 @@
       </header>
 
       <main id="main-content" class="main-content">
-        <!-- Content will be injected here -->
+  <section class="player-layout">
+      <div class="player-main">
+        <div class="player-header">
+          <a href="../index.html" class="btn-back">
+            <span class="icon">arrow_back</span> Back
+          </a>
+          <h2>2048 Classic</h2>
+        </div>
+        
+        <div class="game-wrapper">
+          <div class="iframe-container">
+             <iframe 
+               src="https://html5.gamedistribution.com/713d172e6d9645bab2407c23afb038c8/" 
+               id="game-frame" 
+               frameborder="0" 
+               scrolling="no" 
+               allowfullscreen 
+               referrerpolicy="no-referrer" 
+               style="width: 100%; height: 100%; background: white;"
+               sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-pointer-lock allow-top-navigation-by-user-activation"
+               allow="autoplay; fullscreen; monetization; clipboard-write; web-share; accelerometer; magnetometer; gyroscope; display-capture">
+            </iframe>
+          </div>
+          <div class="game-controls">
+            <button id="btn-fullscreen" class="control-btn" onclick="const iframe = document.getElementById('game-frame'); if(iframe.requestFullscreen) iframe.requestFullscreen();">
+              <span class="icon">fullscreen</span> Fullscreen
+            </button>
+             <div class="rating">
+                <span class="icon">❤️</span> 95%
+             </div>
+          </div>
+        </div>
 
+        <div class="game-info">
+          <h3>About 2048 Classic</h3>
+          <p>Play the original 2048 Classic puzzle game. Slide tiles to combine matching numbers and reach the 2048 tile. A simple yet addictive brain teaser.</p>
+          
+          <div class="instructions">
+             <h3>How to Play</h3>
+             <ul>
+               <li>Click "Play" to start.</li>
+               <li>Use Mouse or Keyboard to control.</li>
+               <li>Complete objectives and earn high scores!</li>
+             </ul>
+          </div>
+        </div>
+      </div>
 
-      </main>
+      <aside class="player-sidebar">
+        <h3>You May Also Like</h3>
+        <div class="related-games-list">
+          
+            <a href="../games/one-line.html" class="related-card">
+              <img src="../public/cache/data/image/game/one-line/one-line.jpg" alt="One Line" loading="lazy" />
+              <div class="info">
+                <h4>One Line</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/brick-match.html" class="related-card">
+              <img src="../public/cache/data/image/game/brick-match/brick-match.jpg" alt="Brick Match" loading="lazy" />
+              <div class="info">
+                <h4>Brick Match</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/robby-bomberman.html" class="related-card">
+              <img src="../public/cache/data/image/game/robby-bomberman/robby-bomberman.jpg" alt="Robby: Bomberman" loading="lazy" />
+              <div class="info">
+                <h4>Robby: Bomberman</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/uphill-rush-13.html" class="related-card">
+              <img src="../public/cache/data/image/game/uphill-rush-13/uphill-rush-13.jpg" alt="Uphill Rush 13" loading="lazy" />
+              <div class="info">
+                <h4>Uphill Rush 13</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/lollipop-stack-run.html" class="related-card">
+              <img src="../public/cache/data/image/game/lollipop-stack-run/lollipop-stack-run.jpg" alt="Lollipop Stack Run" loading="lazy" />
+              <div class="info">
+                <h4>Lollipop Stack Run</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/bubble-game-3d.html" class="related-card">
+              <img src="../public/cache/data/image/game/bubble-game-3d/bubble-game-3d.jpg" alt="Bubble Game 3D" loading="lazy" />
+              <div class="info">
+                <h4>Bubble Game 3D</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+        </div>
+      </aside>
+    </section>
+</main>
 
       <footer class="site-footer"
         style="background: var(--surface); border-top: 1px solid var(--glass-border); padding: 4rem 2rem 2rem; margin-top: 2rem;">
