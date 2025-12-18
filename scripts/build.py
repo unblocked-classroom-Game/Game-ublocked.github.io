@@ -25,6 +25,10 @@ with open(DATA_FILE, 'r', encoding='utf-8') as f:
 with open(TEMPLATE_FILE, 'r', encoding='utf-8') as f:
     template = f.read()
 
+# Sitemap Storage
+sitemap_urls = []
+base_url = "https://pingwin-w.github.io/GameBLOCK.github.io"
+
 # 2. No need to copy assets (we are in root)
 
 # 3. Helper to Generate Grid Pages
@@ -36,9 +40,12 @@ def generate_grid_page(games_list, page_title, output_filename, active_nav='', s
         seo_title = f"{page_title} - Modern Game Portal"
     if not seo_desc:
         seo_desc = "Play the best free online games at Modern Game Portal. Discover arcade, puzzle, and action games in a premium, ad-free environment."
-    seo_image = "https://pingwin-w.github.io/GameBLOCK.github.io/public/cache/data/image/options/geometry_dash.png"
-    seo_url = f"https://pingwin-w.github.io/GameBLOCK.github.io/{output_filename}"
+    seo_image = f"{base_url}/public/cache/data/image/options/geometry_dash.png"
+    seo_url = f"{base_url}/{output_filename}"
     seo_keywords = "online games, free games, arcade games, puzzle games, browser games, html5 games"
+    
+    # Add to sitemap
+    sitemap_urls.append(seo_url)
     
     games_html_list = []
     for game in games_list:
@@ -99,6 +106,7 @@ def generate_grid_page(games_list, page_title, output_filename, active_nav='', s
     page_content = page_content.replace('%IMAGE%', seo_image)
     page_content = page_content.replace('%URL%', seo_url)
     page_content = page_content.replace('%KEYWORDS%', seo_keywords)
+    page_content = page_content.replace('%CANONICAL_URL%', seo_url)
 
     with open(os.path.join(BASE_DIR, output_filename), 'w', encoding='utf-8') as f:
         f.write(page_content)
@@ -242,14 +250,18 @@ for game in games:
     if g_image.startswith('./'):
         g_image = g_image[1:] # remove dot, keep /public...
     
-    full_image_url = f"https://pingwin-w.github.io/GameBLOCK.github.io{g_image}"
-    full_page_url = f"https://pingwin-w.github.io/GameBLOCK.github.io/games/{slug}.html"
+    full_image_url = f"{base_url}{g_image}"
+    full_page_url = f"{base_url}/games/{slug}.html"
+    
+    # Add to sitemap
+    sitemap_urls.append(full_page_url)
     
     page_content = page_content.replace('%TITLE%', g_title)
     page_content = page_content.replace('%DESCRIPTION%', g_desc)
     page_content = page_content.replace('%IMAGE%', full_image_url)
     page_content = page_content.replace('%URL%', full_page_url)
     page_content = page_content.replace('%KEYWORDS%', f"play {name}, {name} game, free online games, {game.get('category','Arcade')} games")
+    page_content = page_content.replace('%CANONICAL_URL%', full_page_url)
 
     # Fix resource paths for subdirectory
     # We need to change ./src/ -> ../src/ and ./public/ -> ../public/
@@ -266,4 +278,14 @@ for game in games:
     with open(os.path.join(GAMES_DIR, f'{slug}.html'), 'w', encoding='utf-8') as f:
         f.write(page_content)
 
-print('Build complete! Output in root.')
+# 5. Generate Sitemap
+print('Generating sitemap.xml...')
+sitemap_content = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+for url in sitemap_urls:
+    sitemap_content += f'  <url>\n    <loc>{url}</loc>\n    <lastmod>2025-12-18</lastmod>\n  </url>\n'
+sitemap_content += '</urlset>'
+
+with open(os.path.join(BASE_DIR, 'sitemap.xml'), 'w', encoding='utf-8') as f:
+    f.write(sitemap_content)
+
+print(f'Build complete! Output in root. Generated sitemap with {len(sitemap_urls)} URLs.')

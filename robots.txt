@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pingwin-w.github.io/GameBLOCK.github.io/sitemap.xml
