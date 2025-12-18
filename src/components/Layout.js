@@ -1,4 +1,5 @@
 import { renderFooter } from './Footer.js';
+import { renderHeader } from './Header.js';
 
 export function renderLayout(parentElement) {
     // Container
