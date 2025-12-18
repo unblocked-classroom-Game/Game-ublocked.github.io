@@ -28,8 +28,17 @@ with open(TEMPLATE_FILE, 'r', encoding='utf-8') as f:
 # 2. No need to copy assets (we are in root)
 
 # 3. Helper to Generate Grid Pages
-def generate_grid_page(games_list, page_title, output_filename, active_nav=''):
+def generate_grid_page(games_list, page_title, output_filename, active_nav='', seo_title='', seo_desc=''):
     print(f'Generating {output_filename}...')
+    
+    # Defaults
+    if not seo_title:
+        seo_title = f"{page_title} - Modern Game Portal"
+    if not seo_desc:
+        seo_desc = "Play the best free online games at Modern Game Portal. Discover arcade, puzzle, and action games in a premium, ad-free environment."
+    seo_image = "https://pingwin-w.github.io/GameBLOCK.github.io/public/cache/data/image/options/geometry_dash.png"
+    seo_url = f"https://pingwin-w.github.io/GameBLOCK.github.io/{output_filename}"
+    seo_keywords = "online games, free games, arcade games, puzzle games, browser games, html5 games"
     
     games_html_list = []
     for game in games_list:
@@ -84,11 +93,20 @@ def generate_grid_page(games_list, page_title, output_filename, active_nav=''):
     elif active_nav == 'new':
          page_content = page_content.replace('href="./new.html" class="nav-item"', 'href="./new.html" class="nav-item active"')
 
+    # Inject SEO
+    page_content = page_content.replace('%TITLE%', seo_title)
+    page_content = page_content.replace('%DESCRIPTION%', seo_desc)
+    page_content = page_content.replace('%IMAGE%', seo_image)
+    page_content = page_content.replace('%URL%', seo_url)
+    page_content = page_content.replace('%KEYWORDS%', seo_keywords)
+
     with open(os.path.join(BASE_DIR, output_filename), 'w', encoding='utf-8') as f:
         f.write(page_content)
 
 # Generate Home (Default Order)
-generate_grid_page(games, 'All Games', 'index.html', active_nav='home')
+generate_grid_page(games, 'All Games', 'index.html', active_nav='home', 
+                   seo_title="Modern Game Portal - Play Best Free Online Games",
+                   seo_desc="Play the best free online games at Modern Game Portal. Discover arcade, puzzle, and action games in a premium, ad-free environment. Play now without downloads!")
 
 # Generate Popular (Shuffle)
 import random
@@ -146,6 +164,28 @@ for game in games:
         '<main id="main-content" class="main-content">\n        <!-- Content will be injected here -->\n      </main>',
         f'<main id="main-content" class="main-content">{player_html}</main>'
     )
+    
+    # Game SEO Data
+    g_title = f"{name} - Play Online for Free"
+    g_desc = game.get('description', '')
+    if not g_desc:
+        g_desc = f"Play {name} online for free. One of the best {game.get('category','Arcade')} games. No downloads required!"
+    
+    # Fix image path for SEO (make absolute if possible, or at least relative correctly)
+    # The image path is like /cache/... or ./public/...
+    # Ideally use absolute URL for OG tags
+    g_image = game.get('image', '')
+    if g_image.startswith('./'):
+        g_image = g_image[1:] # remove dot, keep /public...
+    
+    full_image_url = f"https://pingwin-w.github.io/GameBLOCK.github.io{g_image}"
+    full_page_url = f"https://pingwin-w.github.io/GameBLOCK.github.io/games/{slug}.html"
+    
+    page_content = page_content.replace('%TITLE%', g_title)
+    page_content = page_content.replace('%DESCRIPTION%', g_desc)
+    page_content = page_content.replace('%IMAGE%', full_image_url)
+    page_content = page_content.replace('%URL%', full_page_url)
+    page_content = page_content.replace('%KEYWORDS%', f"play {name}, {name} game, free online games, {game.get('category','Arcade')} games")
 
     # Fix resource paths for subdirectory
     # We need to change ./src/ -> ../src/ and ./public/ -> ../public/
