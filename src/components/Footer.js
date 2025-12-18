@@ -1,9 +1,9 @@
 export function renderFooter() {
-    const footer = document.createElement('footer');
-    footer.className = 'site-footer';
-    footer.style.cssText = 'background: var(--surface); border-top: 1px solid var(--glass-border); padding: 4rem 2rem 2rem; margin-top: 2rem;';
+  const footer = document.createElement('footer');
+  footer.className = 'site-footer';
+  footer.style.cssText = 'background: var(--surface); border-top: 1px solid var(--glass-border); padding: 4rem 2rem 2rem; margin-top: 2rem;';
 
-    const template = `
+  const template = `
     <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem;">
       
       <!-- Column 1: Site Links -->
@@ -21,11 +21,11 @@ export function renderFooter() {
       <div class="footer-col">
         <h4 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.1em;">Game Categories</h4>
         <nav style="display: flex; flex-direction: column; gap: 0.8rem;">
-          <a href="./index.html" style="color: var(--color-text-dim); text-decoration: none; transition: color 0.2s;">Action</a>
-          <a href="./index.html" style="color: var(--color-text-dim); text-decoration: none; transition: color 0.2s;">Arcade</a>
-          <a href="./index.html" style="color: var(--color-text-dim); text-decoration: none; transition: color 0.2s;">Puzzle</a>
-          <a href="./index.html" style="color: var(--color-text-dim); text-decoration: none; transition: color 0.2s;">Racing</a>
-          <a href="./index.html" style="color: var(--color-text-dim); text-decoration: none; transition: color 0.2s;">Sports</a>
+          <a href="./action.html" style="color: var(--color-text-dim); text-decoration: none; transition: color 0.2s;">Action</a>
+          <a href="./arcade.html" style="color: var(--color-text-dim); text-decoration: none; transition: color 0.2s;">Arcade</a>
+          <a href="./puzzle.html" style="color: var(--color-text-dim); text-decoration: none; transition: color 0.2s;">Puzzle</a>
+          <a href="./racing.html" style="color: var(--color-text-dim); text-decoration: none; transition: color 0.2s;">Racing</a>
+          <a href="./sports.html" style="color: var(--color-text-dim); text-decoration: none; transition: color 0.2s;">Sports</a>
         </nav>
       </div>
 
@@ -57,6 +57,6 @@ export function renderFooter() {
     </div>
   `;
 
-    footer.innerHTML = template;
-    return footer;
+  footer.innerHTML = template;
+  return footer;
 }

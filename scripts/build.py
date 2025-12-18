@@ -207,18 +207,29 @@ terms_content = '''
 '''
 
 about_content = '''
-<h3>Our Mission</h3>
-<p>Modern Game Portal shows the best free online games in a premium, ad-free environment (except for the games themselves!).</p>
-<h3>The Team</h3>
-<p>We are a small team of passionate developers and gamers dedicated to bringing you the best web gaming experience.</p>
+<h3>About Modern Game Portal</h3>
+<p>Modern Game Portal is your ultimate destination for free online gaming. We provide a safe, secure, and family-friendly environment where you can play the best HTML5 games without any downloads or installations.</p>
+<h4>Our Mission</h4>
+<p>We aim to bring the highest quality games to your browser. From intense action games to brain-teasing puzzles, our collection is curated to ensure you have the best experience possible.</p>
+<h4>Why Choose Us?</h4>
+<ul>
+<li><strong>No Downloads:</strong> Play instantly in your web browser.</li>
+<li><strong>Cross-Platform:</strong> Works on Desktop, Tablet, and Mobile.</li>
+<li><strong>Safe & Secure:</strong> All games are tested for safety.</li>
+</ul>
 '''
 
 contact_content = '''
-<h3>Get in Touch</h3>
-<p>We'd love to hear from you! Whether you have a game suggestion, bug report, or just want to say hi.</p>
+<h3>Contact Information</h3>
+<p>We value your feedback! valid concerns, or DMCA requests should be directed to our support team.</p>
 <div style="margin-top: 2rem;">
-    <p><strong>Email:</strong> support@example.com</p>
-    <p><strong>Twitter:</strong> @GamePortal</p>
+    <p><strong>General Inquiries:</strong> info@moderngameportal.com</p>
+    <p><strong>Support:</strong> support@moderngameportal.com</p>
+    <p><strong>Business:</strong> biz@moderngameportal.com</p>
+</div>
+<div style="margin-top: 2rem; padding: 1rem; background: rgba(0,0,0,0.2); border-radius: 8px;">
+    <h4>Report an Issue</h4>
+    <p>If you encounter a bug or inappropriate content, please report it immediately with the game URL.</p>
 </div>
 '''
 
