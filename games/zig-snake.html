@@ -56,28 +56,108 @@
       </aside>
 
       <main id="main-content" class="main-content">
-  <section class="player-page">
-      <div class="player-header">
-        <a href="../index.html" class="btn-back">
-          <span class="icon">arrow_back</span> Back
-        </a>
-        <h2>Zig Snake</h2>
-      </div>
-      <div class="game-container">
-        <div class="iframe-wrapper">
-           <iframe 
-              src="https://html5.gamedistribution.com/99724b7d35664539a172e389933a8f06/" 
-              id="game-frame" 
-              frameborder="0" 
-              scrolling="no" 
-              allowfullscreen 
-              referrerpolicy="no-referrer" 
-              style="width: 100%; height: 100%; background: white;"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-pointer-lock allow-top-navigation-by-user-activation"
-              allow="autoplay; fullscreen; monetization; clipboard-write; web-share; accelerometer; magnetometer; gyroscope; display-capture">
-           </iframe>
+  <section class="player-layout">
+      <div class="player-main">
+        <div class="player-header">
+          <a href="../index.html" class="btn-back">
+            <span class="icon">arrow_back</span> Back
+          </a>
+          <h2>Zig Snake</h2>
+        </div>
+        
+        <div class="game-wrapper">
+          <div class="iframe-container">
+             <iframe 
+               src="https://html5.gamedistribution.com/99724b7d35664539a172e389933a8f06/" 
+               id="game-frame" 
+               frameborder="0" 
+               scrolling="no" 
+               allowfullscreen 
+               referrerpolicy="no-referrer" 
+               style="width: 100%; height: 100%; background: white;"
+               sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-pointer-lock allow-top-navigation-by-user-activation"
+               allow="autoplay; fullscreen; monetization; clipboard-write; web-share; accelerometer; magnetometer; gyroscope; display-capture">
+            </iframe>
+          </div>
+          <div class="game-controls">
+            <button id="btn-fullscreen" class="control-btn" onclick="const iframe = document.getElementById('game-frame'); if(iframe.requestFullscreen) iframe.requestFullscreen();">
+              <span class="icon">fullscreen</span> Fullscreen
+            </button>
+             <div class="rating">
+                <span class="icon">❤️</span> 95%
+             </div>
+          </div>
+        </div>
+
+        <div class="game-info">
+          <h3>About Zig Snake</h3>
+          <p>Guide the snake through a zigzag path in Zig Snake. React quickly to turns, collect food, and grow your snake without falling off.</p>
+          
+          <div class="instructions">
+             <h3>How to Play</h3>
+             <ul>
+               <li>Click "Play" to start.</li>
+               <li>Use Mouse or Keyboard to control.</li>
+               <li>Complete objectives and earn high scores!</li>
+             </ul>
+          </div>
         </div>
       </div>
+
+      <aside class="player-sidebar">
+        <h3>You May Also Like</h3>
+        <div class="related-games-list">
+          
+            <a href="../games/uphill-rush-13.html" class="related-card">
+              <img src="../public/cache/data/image/game/uphill-rush-13/uphill-rush-13.jpg" alt="Uphill Rush 13" loading="lazy" />
+              <div class="info">
+                <h4>Uphill Rush 13</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/arcade-rope.html" class="related-card">
+              <img src="../public/cache/data/image/game/arcade-rope/arcade-rope.jpg" alt="Arcade Rope" loading="lazy" />
+              <div class="info">
+                <h4>Arcade Rope</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/2048-merge-circle.html" class="related-card">
+              <img src="../public/cache/data/image/game/2048-merge-circle/2048-merge-circle.jpg" alt="2048 Merge Circle" loading="lazy" />
+              <div class="info">
+                <h4>2048 Merge Circle</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/aqua-blitz-2.html" class="related-card">
+              <img src="../public/cache/data/image/game/aqua-blitz-2/aqua-blitz-2.jpeg" alt="Aqua Blitz 2" loading="lazy" />
+              <div class="info">
+                <h4>Aqua Blitz 2</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/egg-adventure-2.html" class="related-card">
+              <img src="../public/cache/data/image/game/egg-adventure-2/egg-adventure-2.jpg" alt="Egg Adventure 2" loading="lazy" />
+              <div class="info">
+                <h4>Egg Adventure 2</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/robby-bomberman.html" class="related-card">
+              <img src="../public/cache/data/image/game/robby-bomberman/robby-bomberman.jpg" alt="Robby: Bomberman" loading="lazy" />
+              <div class="info">
+                <h4>Robby: Bomberman</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+        </div>
+      </aside>
     </section>
 </main>
     </div>

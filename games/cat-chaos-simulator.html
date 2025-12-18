@@ -56,28 +56,108 @@
       </aside>
 
       <main id="main-content" class="main-content">
-  <section class="player-page">
-      <div class="player-header">
-        <a href="../index.html" class="btn-back">
-          <span class="icon">arrow_back</span> Back
-        </a>
-        <h2>Cat Chaos Simulator</h2>
-      </div>
-      <div class="game-container">
-        <div class="iframe-wrapper">
-           <iframe 
-              src="https://html5.gamedistribution.com/427f3a980dfc48e69e4329acdb5b9d8b/" 
-              id="game-frame" 
-              frameborder="0" 
-              scrolling="no" 
-              allowfullscreen 
-              referrerpolicy="no-referrer" 
-              style="width: 100%; height: 100%; background: white;"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-pointer-lock allow-top-navigation-by-user-activation"
-              allow="autoplay; fullscreen; monetization; clipboard-write; web-share; accelerometer; magnetometer; gyroscope; display-capture">
-           </iframe>
+  <section class="player-layout">
+      <div class="player-main">
+        <div class="player-header">
+          <a href="../index.html" class="btn-back">
+            <span class="icon">arrow_back</span> Back
+          </a>
+          <h2>Cat Chaos Simulator</h2>
+        </div>
+        
+        <div class="game-wrapper">
+          <div class="iframe-container">
+             <iframe 
+               src="https://html5.gamedistribution.com/427f3a980dfc48e69e4329acdb5b9d8b/" 
+               id="game-frame" 
+               frameborder="0" 
+               scrolling="no" 
+               allowfullscreen 
+               referrerpolicy="no-referrer" 
+               style="width: 100%; height: 100%; background: white;"
+               sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-pointer-lock allow-top-navigation-by-user-activation"
+               allow="autoplay; fullscreen; monetization; clipboard-write; web-share; accelerometer; magnetometer; gyroscope; display-capture">
+            </iframe>
+          </div>
+          <div class="game-controls">
+            <button id="btn-fullscreen" class="control-btn" onclick="const iframe = document.getElementById('game-frame'); if(iframe.requestFullscreen) iframe.requestFullscreen();">
+              <span class="icon">fullscreen</span> Fullscreen
+            </button>
+             <div class="rating">
+                <span class="icon">❤️</span> 95%
+             </div>
+          </div>
+        </div>
+
+        <div class="game-info">
+          <h3>About Cat Chaos Simulator</h3>
+          <p>Embrace the life of a mischievous cat in Cat Chaos Simulator. Explore, knock things over, and cause mayhem in this fun simulation game.</p>
+          
+          <div class="instructions">
+             <h3>How to Play</h3>
+             <ul>
+               <li>Click "Play" to start.</li>
+               <li>Use Mouse or Keyboard to control.</li>
+               <li>Complete objectives and earn high scores!</li>
+             </ul>
+          </div>
         </div>
       </div>
+
+      <aside class="player-sidebar">
+        <h3>You May Also Like</h3>
+        <div class="related-games-list">
+          
+            <a href="../games/parkour-block-7.html" class="related-card">
+              <img src="../public/cache/data/image/game/parkour-block-7/parkour-block-7.jpg" alt="Parkour Block 7" loading="lazy" />
+              <div class="info">
+                <h4>Parkour Block 7</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/merge-flowers.html" class="related-card">
+              <img src="../public/cache/data/image/game/merge-flowers/merge-flowers.jpg" alt="Merge Flowers" loading="lazy" />
+              <div class="info">
+                <h4>Merge Flowers</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/obby-on-a-bike.html" class="related-card">
+              <img src="../public/cache/data/image/game/obby-on-a-bike/obby-on-a-bike.jpg" alt="Obby On a Bike" loading="lazy" />
+              <div class="info">
+                <h4>Obby On a Bike</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/egg-adventure-2.html" class="related-card">
+              <img src="../public/cache/data/image/game/egg-adventure-2/egg-adventure-2.jpg" alt="Egg Adventure 2" loading="lazy" />
+              <div class="info">
+                <h4>Egg Adventure 2</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/snow-rush-3d.html" class="related-card">
+              <img src="../public/cache/data/image/game/snow-rush-3d/snow-rush-3d.jpg" alt="Snow Rush 3D" loading="lazy" />
+              <div class="info">
+                <h4>Snow Rush 3D</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/hidden-easter-egg-hunt.html" class="related-card">
+              <img src="../public/cache/data/image/game/hidden-easter-egg-hunt/hidden-easter-egg-hunt.jpg" alt="Hidden Easter Egg Hunt" loading="lazy" />
+              <div class="info">
+                <h4>Hidden Easter Egg Hunt</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+        </div>
+      </aside>
     </section>
 </main>
     </div>

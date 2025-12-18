@@ -134,29 +134,93 @@ for game in games:
 
     game_url = f"https://html5.gamedistribution.com/{game_id}/"
 
+    # Select 6 random other games for sidebar
+    import random
+    other_games = [g for g in games if g.get('slug') != slug]
+    random.shuffle(other_games)
+    sidebar_games = other_games[:6]
+    
+    sidebar_html_list = []
+    for bg in sidebar_games:
+        bg_name = bg.get('name', 'Game')
+        bg_slug = bg.get('slug', '')
+        bg_cat = bg.get('category', 'Game')
+        bg_img = bg.get('image', '')
+        # Fix relative image path for subplot
+        if bg_img.startswith('./'):
+             bg_img = '.' + bg_img 
+        
+        sidebar_html_list.append(f'''
+            <a href="../games/{bg_slug}.html" class="related-card">
+              <img src="{bg_img}" alt="{bg_name}" loading="lazy" />
+              <div class="info">
+                <h4>{bg_name}</h4>
+                <span>{bg_cat}</span>
+              </div>
+            </a>
+        ''')
+    sidebar_html = ''.join(sidebar_html_list)
+
+    # Game Description
+    g_desc_text = game.get('description', '')
+    if not g_desc_text:
+        g_desc_text = f"Play {name} online for free. This is a popular {game.get('category','Arcade')} game."
+
     player_html = f'''
-  <section class="player-page">
-      <div class="player-header">
-        <a href="../index.html" class="btn-back">
-          <span class="icon">arrow_back</span> Back
-        </a>
-        <h2>{name}</h2>
-      </div>
-      <div class="game-container">
-        <div class="iframe-wrapper">
-           <iframe 
-              src="{game_url}" 
-              id="game-frame" 
-              frameborder="0" 
-              scrolling="no" 
-              allowfullscreen 
-              referrerpolicy="no-referrer" 
-              style="width: 100%; height: 100%; background: white;"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-pointer-lock allow-top-navigation-by-user-activation"
-              allow="autoplay; fullscreen; monetization; clipboard-write; web-share; accelerometer; magnetometer; gyroscope; display-capture">
-           </iframe>
+  <section class="player-layout">
+      <div class="player-main">
+        <div class="player-header">
+          <a href="../index.html" class="btn-back">
+            <span class="icon">arrow_back</span> Back
+          </a>
+          <h2>{name}</h2>
+        </div>
+        
+        <div class="game-wrapper">
+          <div class="iframe-container">
+             <iframe 
+               src="{game_url}" 
+               id="game-frame" 
+               frameborder="0" 
+               scrolling="no" 
+               allowfullscreen 
+               referrerpolicy="no-referrer" 
+               style="width: 100%; height: 100%; background: white;"
+               sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-pointer-lock allow-top-navigation-by-user-activation"
+               allow="autoplay; fullscreen; monetization; clipboard-write; web-share; accelerometer; magnetometer; gyroscope; display-capture">
+            </iframe>
+          </div>
+          <div class="game-controls">
+            <button id="btn-fullscreen" class="control-btn" onclick="const iframe = document.getElementById('game-frame'); if(iframe.requestFullscreen) iframe.requestFullscreen();">
+              <span class="icon">fullscreen</span> Fullscreen
+            </button>
+             <div class="rating">
+                <span class="icon">❤️</span> 95%
+             </div>
+          </div>
+        </div>
+
+        <div class="game-info">
+          <h3>About {name}</h3>
+          <p>{g_desc_text}</p>
+          
+          <div class="instructions">
+             <h3>How to Play</h3>
+             <ul>
+               <li>Click "Play" to start.</li>
+               <li>Use Mouse or Keyboard to control.</li>
+               <li>Complete objectives and earn high scores!</li>
+             </ul>
+          </div>
         </div>
       </div>
+
+      <aside class="player-sidebar">
+        <h3>You May Also Like</h3>
+        <div class="related-games-list">
+          {sidebar_html}
+        </div>
+      </aside>
     </section>
 '''
 

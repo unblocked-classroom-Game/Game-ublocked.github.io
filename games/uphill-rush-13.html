@@ -56,28 +56,108 @@
       </aside>
 
       <main id="main-content" class="main-content">
-  <section class="player-page">
-      <div class="player-header">
-        <a href="../index.html" class="btn-back">
-          <span class="icon">arrow_back</span> Back
-        </a>
-        <h2>Uphill Rush 13</h2>
-      </div>
-      <div class="game-container">
-        <div class="iframe-wrapper">
-           <iframe 
-              src="https://html5.gamedistribution.com/c084653fe0b3484681d9b268663675bf/" 
-              id="game-frame" 
-              frameborder="0" 
-              scrolling="no" 
-              allowfullscreen 
-              referrerpolicy="no-referrer" 
-              style="width: 100%; height: 100%; background: white;"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-pointer-lock allow-top-navigation-by-user-activation"
-              allow="autoplay; fullscreen; monetization; clipboard-write; web-share; accelerometer; magnetometer; gyroscope; display-capture">
-           </iframe>
+  <section class="player-layout">
+      <div class="player-main">
+        <div class="player-header">
+          <a href="../index.html" class="btn-back">
+            <span class="icon">arrow_back</span> Back
+          </a>
+          <h2>Uphill Rush 13</h2>
+        </div>
+        
+        <div class="game-wrapper">
+          <div class="iframe-container">
+             <iframe 
+               src="https://html5.gamedistribution.com/c084653fe0b3484681d9b268663675bf/" 
+               id="game-frame" 
+               frameborder="0" 
+               scrolling="no" 
+               allowfullscreen 
+               referrerpolicy="no-referrer" 
+               style="width: 100%; height: 100%; background: white;"
+               sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-pointer-lock allow-top-navigation-by-user-activation"
+               allow="autoplay; fullscreen; monetization; clipboard-write; web-share; accelerometer; magnetometer; gyroscope; display-capture">
+            </iframe>
+          </div>
+          <div class="game-controls">
+            <button id="btn-fullscreen" class="control-btn" onclick="const iframe = document.getElementById('game-frame'); if(iframe.requestFullscreen) iframe.requestFullscreen();">
+              <span class="icon">fullscreen</span> Fullscreen
+            </button>
+             <div class="rating">
+                <span class="icon">❤️</span> 95%
+             </div>
+          </div>
+        </div>
+
+        <div class="game-info">
+          <h3>About Uphill Rush 13</h3>
+          <p>Race through water parks and roller coasters in Uphill Rush 13. Perform stunts, collect coins, and finish the course as fast as possible.</p>
+          
+          <div class="instructions">
+             <h3>How to Play</h3>
+             <ul>
+               <li>Click "Play" to start.</li>
+               <li>Use Mouse or Keyboard to control.</li>
+               <li>Complete objectives and earn high scores!</li>
+             </ul>
+          </div>
         </div>
       </div>
+
+      <aside class="player-sidebar">
+        <h3>You May Also Like</h3>
+        <div class="related-games-list">
+          
+            <a href="../games/parkour-block-7.html" class="related-card">
+              <img src="../public/cache/data/image/game/parkour-block-7/parkour-block-7.jpg" alt="Parkour Block 7" loading="lazy" />
+              <div class="info">
+                <h4>Parkour Block 7</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/aqua-blitz-2.html" class="related-card">
+              <img src="../public/cache/data/image/game/aqua-blitz-2/aqua-blitz-2.jpeg" alt="Aqua Blitz 2" loading="lazy" />
+              <div class="info">
+                <h4>Aqua Blitz 2</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/one-line.html" class="related-card">
+              <img src="../public/cache/data/image/game/one-line/one-line.jpg" alt="One Line" loading="lazy" />
+              <div class="info">
+                <h4>One Line</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/doges-battle-royale.html" class="related-card">
+              <img src="../public/cache/data/image/game/doges-battle-royale/doges-battle-royale.jpg" alt="Doge's Battle Royale" loading="lazy" />
+              <div class="info">
+                <h4>Doge's Battle Royale</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/egg-adventure-2.html" class="related-card">
+              <img src="../public/cache/data/image/game/egg-adventure-2/egg-adventure-2.jpg" alt="Egg Adventure 2" loading="lazy" />
+              <div class="info">
+                <h4>Egg Adventure 2</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+            <a href="../games/obby-on-a-bike.html" class="related-card">
+              <img src="../public/cache/data/image/game/obby-on-a-bike/obby-on-a-bike.jpg" alt="Obby On a Bike" loading="lazy" />
+              <div class="info">
+                <h4>Obby On a Bike</h4>
+                <span>Arcade</span>
+              </div>
+            </a>
+        
+        </div>
+      </aside>
     </section>
 </main>
     </div>
