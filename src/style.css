@@ -196,9 +196,10 @@ body {
 
 /* Game Card */
 .game-card {
-  background: var(--glass);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.08);
+  /* Increased opacity slightly */
+  /* backdrop-filter removed for performance */
+  /* -webkit-backdrop-filter removed for performance */
   border-radius: var(--radius);
   overflow: hidden;
   position: relative;
@@ -214,7 +215,8 @@ body {
   transform: translateY(-8px) scale(1.02);
   border-color: rgba(0, 242, 255, 0.3);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 242, 255, 0.1);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.12);
+  /* Slightly brighter on hover */
 }
 
 .card-image {
@@ -245,7 +247,7 @@ body {
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-  backdrop-filter: blur(2px);
+  /* backdrop-filter removed for performance */
 }
 
 .game-card:hover .card-overlay {
