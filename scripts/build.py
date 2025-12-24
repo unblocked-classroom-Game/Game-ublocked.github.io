@@ -497,16 +497,12 @@ for game in games:
     page_content = page_content.replace('%CANONICAL_URL%', full_page_url)
 
     # Fix resource paths for subdirectory
-    # We need to change ./src/ -> ../src/ and ./public/ -> ../public/
-    page_content = page_content.replace('href="./src/', 'href="../src/')
-    page_content = page_content.replace('src="./src/', 'src="../src/')
-    page_content = page_content.replace('href="./public/', 'href="../public/')
-    page_content = page_content.replace('src="./public/', 'src="../public/')
+    # Global fix: matches all ./ links (css, js, images, html) and points them up one level
+    page_content = page_content.replace('href="./', 'href="../')
+    page_content = page_content.replace('src="./', 'src="../')
     
-    # Fix Sidebar Links for subdirectory
-    page_content = page_content.replace('href="./index.html"', 'href="../index.html"')
-    page_content = page_content.replace('href="./popular.html"', 'href="../popular.html"')
-    page_content = page_content.replace('href="./new.html"', 'href="../new.html"')
+    # NOTE: This global replace covers the sidebar links, favicon, and script tags matching the pattern.
+    # Links that were already manually set to "../" (like in player_html) will be untouched (since they don't start with ./)
 
     # REMOVE main.js for game pages
     page_content = page_content.replace('<script type="module" src="./src/main.js"></script>', '')
