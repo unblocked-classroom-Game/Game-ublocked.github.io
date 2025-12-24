@@ -43,7 +43,7 @@ def generate_grid_page(games_list, page_title, output_filename, active_nav='', s
         seo_title = f"{page_title} - Modern Game Portal"
     if not seo_desc:
         seo_desc = "Play the best free online games at Modern Game Portal. Discover arcade, puzzle, and action games in a premium, ad-free environment."
-    seo_image = f"{base_url}/public/cache/data/image/options/geometry_dash.png"
+    seo_image = f"{base_url}/public/cache/data/image/options/favicon-s512x512.png"
     seo_url = f"{base_url}/{output_filename}"
     seo_keywords = "online games, free games, arcade games, puzzle games, browser games, html5 games"
     
